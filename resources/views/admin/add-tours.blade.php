@@ -85,19 +85,27 @@
                                                 </div>
                                             </div>
                                             <div class="field item form-group">
-                                                <label class="col-form-label col-md-3 col-sm-3  label-align">Điểm đến
+                                                <label class="col-form-label col-md-3 col-sm-3  label-align">Điểm đến 1
                                                     <span>*</span></label>
                                                 <div class="col-md-6 col-sm-6">
                                                     <input class="form-control" name="destination"
-                                                        placeholder="Điểm đếm 1" required>
+                                                        placeholder="Nhập điểm đếm 1" required>
                                                 </div>
                                             </div>
                                             <div class="field item form-group">
-                                                <label class="col-form-label col-md-3 col-sm-3  label-align">Điểm đến
-                                                    <span>(không bắt buộc)</span></label>
+                                                <label class="col-form-label col-md-3 col-sm-3  label-align">Điểm đến
+                                                    2<span>*</span></label>
                                                 <div class="col-md-6 col-sm-6">
-                                                    <input class="form-control" name="weather_destination"
-                                                        placeholder="Điểm đến 2">
+                                                    <input class="form-control" name="weatherDestination"
+                                                        placeholder="Nhập điểm đến 2" required>
+                                                </div>
+                                            </div>
+                                            <div class="field item form-group">
+                                                <label class="col-form-label col-md-3 col-sm-3  label-align">Thời gian
+                                                    tour<span>*</span></label>
+                                                <div class="col-md-6 col-sm-6">
+                                                    <input class="form-control" name="timeTour"
+                                                        placeholder="Nhập thời gian tour" required>
                                                 </div>
                                             </div>
                                             <div class="field item form-group">
@@ -116,7 +124,9 @@
                                                 <label class="col-form-label col-md-3 col-sm-3  label-align">Số lượng
                                                     <span>*</span></label>
                                                 <div class="col-md-6 col-sm-6">
-                                                    <input class="form-control" type="number" name="number" required>
+                                                    <input class="form-control" type="number" name="number"
+                                                        placeholder="Nhập số lượng giới hạn của khách tham gia"
+                                                        required>
                                                 </div>
                                             </div>
                                             <div class="field item form-group">

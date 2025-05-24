@@ -7,6 +7,8 @@
         <td>{{ number_format($tour->priceAdult, 0, ',', '.') }}</td>
         <td>{{ number_format($tour->priceChild, 0, ',', '.') }}</td>
         <td>{{ $tour->destination }}</td>
+        <td>{{ $tour->weatherDestination }}</td> <!-- Thêm cột Địa điểm 2 -->
+        <td>{{ $tour->timeTour }}</td> <!-- Thêm cột Thời gian tour -->
         <td>{{ $tour->availability }}</td>
         <td>{{ date('d-m-Y', strtotime($tour->startDate)) }}</td>
         <td>{{ date('d-m-Y', strtotime($tour->endDate)) }}</td>

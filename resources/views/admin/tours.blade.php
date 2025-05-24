@@ -40,12 +40,14 @@
                                                 <thead>
                                                     <tr>
                                                         <th>Tên</th>
-                                                        <th>Thời gian</th>
+                                                        <th>Thời gian còn lại</th>
                                                         <th>Mô tả</th>
                                                         <th>Số lượng</th>
                                                         <th>Giá người lớn</th>
                                                         <th>Giá trẻ em</th>
                                                         <th>Điểm đến</th>
+                                                        <th>Địa điểm 2</th> <!-- Thêm cột Địa điểm 2 -->
+                                                        <th>Thời gian tour</th> <!-- Thêm cột Thời gian tour -->
                                                         <th>Khả dụng</th>
                                                         <th>Ngày bắt đầu</th>
                                                         <th>Ngày kết thúc</th>
@@ -110,8 +112,7 @@
                                 </li>
                             </ul>
                             <div id="step-1">
-                                <form class="form-info-tour" method="POST"
-                                    id="form-step1">
+                                <form class="form-info-tour" method="POST" id="form-step1">
                                     @csrf
                                     <div class="field item form-group">
                                         <label class="col-form-label col-md-3 col-sm-3  label-align">Tên
@@ -122,11 +123,29 @@
                                         </div>
                                     </div>
                                     <div class="field item form-group">
-                                        <label class="col-form-label col-md-3 col-sm-3  label-align">Điểm đến
+                                        <label class="col-form-label col-md-3 col-sm-3  label-align">Điểm đến 1
                                             <span>*</span></label>
                                         <div class="col-md-6 col-sm-6">
-                                            <input class="form-control" name="destination" placeholder="Điểm đến"
+                                            <input class="form-control" name="destination" placeholder="Điểm đếm 1"
                                                 required>
+                                        </div>
+                                    </div>
+
+                                    <div class="field item form-group">
+                                        <label class="col-form-label col-md-3 col-sm-3  label-align">Điểm đến
+                                            2<span>*</span></label>
+                                        <div class="col-md-6 col-sm-6">
+                                            <input class="form-control" name="weatherDestination"
+                                                placeholder="Nhập điểm đến 2" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="field item form-group">
+                                        <label class="col-form-label col-md-3 col-sm-3  label-align">Thời gian
+                                            tour<span>*</span></label>
+                                        <div class="col-md-6 col-sm-6">
+                                            <input class="form-control" name="timeTour"
+                                                placeholder="Nhập thời gian tour" required>
                                         </div>
                                     </div>
                                     <div class="field item form-group">
@@ -192,8 +211,8 @@
                             </div>
                             <div id="step-2">
                                 <h2 class="StepTitle">Thêm hình ảnh</h2>
-                                <form action="" class="dropzone dz-clickable"
-                                    id="myDropzone-listTour" enctype="multipart/form-data">
+                                <form action="" class="dropzone dz-clickable" id="myDropzone-listTour"
+                                    enctype="multipart/form-data">
                                     @csrf
                                     <div class="dz-default dz-message">
                                         <span>Chọn hình ảnh về tours để upload</span>

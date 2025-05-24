@@ -44,7 +44,8 @@ class ToursManagementController extends Controller
         $start_date = $request->input('start_date');
         $end_date = $request->input('end_date');
         $description = $request->input('description');
-        $weather_destination = $request->input('weather_destination');
+        $weatherDestination = $request->input('weatherDestination');
+        $timeTour = $request->input('timeTour'); 
 
         // Chuyển start_date và end_date từ định dạng d/m/Y sang Y-m-d
         $startDate = Carbon::createFromFormat('d/m/Y', $start_date)->format('Y-m-d');
@@ -61,24 +62,24 @@ class ToursManagementController extends Controller
 
 
         $dataTours = [
-            'title' => $name,
-            'time' => $time,
-            'description' => $description,
-            'quantity' => $quantity,
-            'priceAdult' => $price_adult,
-            'priceChild' => $price_child,
-            'destination' => $destination,
-            'domain' => $domain,
-            'availability' => 0,
-            'startDate' => $startDate,
-            'endDate' => $endDate,
-            'weather_destination' => $weather_destination
+            'title'               => $name,
+            'time'                => $time,
+            'timeTour'            => $timeTour, 
+            'description'         => $description,
+            'quantity'            => $quantity,
+            'priceAdult'          => $price_adult,
+            'priceChild'          => $price_child,
+            'destination'         => $destination,
+            'weatherDestination'  => $weatherDestination,
+            'domain'              => $domain,
+            'availability'        => 0,
+            'startDate'           => $startDate,
+            'endDate'             => $endDate,
         ];
         // dd($dataTours);
 
         $createTour = $this->tours->createTours($dataTours);
 
-        // dd($createTour);
         return response()->json([
             'success' => true,
             'message' => 'Tour added successfully!',
@@ -278,6 +279,8 @@ class ToursManagementController extends Controller
         $price_adult = $request->input('price_adult');
         $price_child = $request->input('price_child');
         $description = $request->input('description');
+        $weatherDestination = $request->input('weatherDestination');
+        $timeTour = $request->input('timeTour');
 
         $dataTours = [
             'title'       => $name,
@@ -286,6 +289,8 @@ class ToursManagementController extends Controller
             'priceAdult'  => $price_adult,
             'priceChild'  => $price_child,
             'destination' => $destination,
+            'weatherDestination' => $weatherDestination,
+            'timeTour'   => $timeTour,
             'domain'      => $domain,
         ];
 

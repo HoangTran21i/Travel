@@ -1121,7 +1121,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 })
                 .catch((error) => {
                     console.error("Error:", error);
-                    toastr.error("Đã xảy ra lỗi. Vui lòng thử lại.");
+                    toastr.error("Bạn phải đăng nhập để tạo.");
                 });
         }
     });

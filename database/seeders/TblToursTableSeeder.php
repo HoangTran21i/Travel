@@ -33,7 +33,7 @@ class TblToursTableSeeder extends Seeder
                 'availability' => 1,
                 'startDate' => '2025-03-24',
                 'endDate' => '2025-04-30',
-                'weather_destination' => 'Phú Quốc',
+                'weatherDestination' => 'Phú Quốc',
             ),
             1 => 
             array (
@@ -49,7 +49,7 @@ class TblToursTableSeeder extends Seeder
                 'availability' => 1,
                 'startDate' => '2025-03-26',
                 'endDate' => '2025-03-30',
-                'weather_destination' => 'Lào Cai',
+                'weatherDestination' => 'Lào Cai',
             ),
             2 => 
             array (
@@ -65,7 +65,7 @@ class TblToursTableSeeder extends Seeder
                 'availability' => 1,
                 'startDate' => '2025-03-23',
                 'endDate' => '2025-04-30',
-                'weather_destination' => NULL,
+                'weatherDestination' => NULL,
             ),
             3 => 
             array (
@@ -81,7 +81,7 @@ class TblToursTableSeeder extends Seeder
                 'availability' => 1,
                 'startDate' => '2025-03-18',
                 'endDate' => '2025-04-23',
-                'weather_destination' => 'Huế',
+                'weatherDestination' => 'Huế',
             ),
             4 => 
             array (
@@ -97,7 +97,7 @@ class TblToursTableSeeder extends Seeder
                 'availability' => 1,
                 'startDate' => '2025-03-18',
                 'endDate' => '2025-04-21',
-                'weather_destination' => 'Ninh Bình',
+                'weatherDestination' => 'Ninh Bình',
             ),
             5 => 
             array (
@@ -113,7 +113,7 @@ class TblToursTableSeeder extends Seeder
                 'availability' => 1,
                 'startDate' => '2025-03-20',
                 'endDate' => '2025-03-22',
-                'weather_destination' => NULL,
+                'weatherDestination' => NULL,
             ),
             6 => 
             array (
@@ -129,7 +129,7 @@ class TblToursTableSeeder extends Seeder
                 'availability' => 1,
                 'startDate' => '2025-03-20',
                 'endDate' => '2025-03-31',
-                'weather_destination' => 'Đà Lạt',
+                'weatherDestination' => 'Đà Lạt',
             ),
             7 => 
             array (
@@ -145,7 +145,7 @@ class TblToursTableSeeder extends Seeder
                 'availability' => 1,
                 'startDate' => '2025-03-20',
                 'endDate' => '2025-03-21',
-                'weather_destination' => NULL,
+                'weatherDestination' => NULL,
             ),
             8 => 
             array (
@@ -165,7 +165,7 @@ class TblToursTableSeeder extends Seeder
                 'availability' => 1,
                 'startDate' => '2025-03-24',
                 'endDate' => '2025-03-25',
-                'weather_destination' => NULL,
+                'weatherDestination' => NULL,
             ),
             9 => 
             array (
@@ -181,7 +181,7 @@ class TblToursTableSeeder extends Seeder
                 'availability' => 1,
                 'startDate' => '2025-04-21',
                 'endDate' => '2025-05-14',
-                'weather_destination' => 'Quãng Ngãi',
+                'weatherDestination' => 'Quãng Ngãi',
             ),
             10 => 
             array (
@@ -197,7 +197,7 @@ class TblToursTableSeeder extends Seeder
                 'availability' => 1,
                 'startDate' => '2025-04-20',
                 'endDate' => '2025-05-24',
-                'weather_destination' => 'Tam Kỳ',
+                'weatherDestination' => 'Tam Kỳ',
             ),
             11 => 
             array (
@@ -216,7 +216,7 @@ class TblToursTableSeeder extends Seeder
                 'availability' => 1,
                 'startDate' => '2025-04-22',
                 'endDate' => '2025-05-31',
-                'weather_destination' => 'Ninh Bình',
+                'weatherDestination' => 'Ninh Bình',
             ),
             12 => 
             array (
@@ -240,7 +240,7 @@ class TblToursTableSeeder extends Seeder
                 'availability' => 1,
                 'startDate' => '2025-04-22',
                 'endDate' => '2025-05-22',
-                'weather_destination' => 'Phú Quốc',
+                'weatherDestination' => 'Phú Quốc',
             ),
             13 => 
             array (
@@ -256,7 +256,7 @@ class TblToursTableSeeder extends Seeder
                 'availability' => 1,
                 'startDate' => '2025-04-24',
                 'endDate' => '2025-05-22',
-                'weather_destination' => 'Lạng Sơn',
+                'weatherDestination' => 'Lạng Sơn',
             ),
             14 => 
             array (
@@ -272,7 +272,7 @@ class TblToursTableSeeder extends Seeder
                 'availability' => 1,
                 'startDate' => '2025-04-23',
                 'endDate' => '2025-06-23',
-                'weather_destination' => 'Phú Quốc',
+                'weatherDestination' => 'Phú Quốc',
             ),
             15 => 
             array (
@@ -288,7 +288,7 @@ class TblToursTableSeeder extends Seeder
                 'availability' => 1,
                 'startDate' => '2025-04-23',
                 'endDate' => '2025-05-30',
-                'weather_destination' => 'Hồ Chí Minh',
+                'weatherDestination' => 'Hồ Chí Minh',
             ),
         ));
         

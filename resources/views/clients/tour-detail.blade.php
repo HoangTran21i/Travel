@@ -6,8 +6,8 @@
             <div class="banner-inner pt-15 pb-25">
                 <h2 class="page-title mb-10 aos-init aos-animate" data-aos="fade-left" data-aos-duration="1500"
                     data-aos-offset="50">{{ $tourDetail->destination }}
-                    @if ($tourDetail->weather_destination)
-                        , {{ $tourDetail->weather_destination }}
+                    @if ($tourDetail->weatherDestination)
+                        , {{ $tourDetail->weatherDestination }}
                     @endif
                 </h2>
                 <nav aria-label="breadcrumb">
@@ -66,8 +66,8 @@
                     <span class="location d-inline-block mb-10">
                         <i class="fal fa-map-marker-alt"></i>
                         {{ $tourDetail->destination }}
-                        @if ($tourDetail->weather_destination)
-                            , {{ $tourDetail->weather_destination }}
+                        @if ($tourDetail->weatherDestination)
+                            , {{ $tourDetail->weatherDestination }}
                         @endif
                     </span>
                     <div class="section-title pb-5">
@@ -133,22 +133,22 @@
         </div>
     </div>
     <div class="weather-container">
-        <!-- Kiểm tra xem weather_destination có giá trị không -->
-        @if ($tourDetail->weather_destination)
+        <!-- Kiểm tra xem weatherDestination có giá trị không -->
+        @if ($tourDetail->weatherDestination)
             <div class="section-title text-center mt-2 mb-40">
-                <h3 class="weather-title">Dự báo thời tiết tại {{ $tourDetail->weather_destination }}</h3>
+                <h3 class="weather-title">Dự báo thời tiết tại {{ $tourDetail->weatherDestination }}</h3>
             </div>
             <div id="weather-box" class="text-center">
                 <div id="weather-destination-box" class="text-center">
-                    <p>Đang tải dữ liệu thời tiết cho {{ $tourDetail->weather_destination }}...</p>
+                    <p>Đang tải dữ liệu thời tiết cho {{ $tourDetail->weatherDestination }}...</p>
                 </div>
             </div>
         @endif
     </div>
     <div id="weather-city" data-city="{{ Str::ascii(trim($tourDetail->destination)) }}" style="display: none;">
     </div>
-    @if ($tourDetail->weather_destination)
-        <div id="weather-destination" data-city="{{ Str::ascii(trim($tourDetail->weather_destination)) }}"
+    @if ($tourDetail->weatherDestination)
+        <div id="weather-destination" data-city="{{ Str::ascii(trim($tourDetail->weatherDestination)) }}"
             style="display: none;"></div>
     @endif
 
@@ -387,7 +387,7 @@
 
 <script>
     const origin = @json($tourDetail->destination);
-    const destination = @json($tourDetail->weather_destination);
+    const destination = @json($tourDetail->weatherDestination);
 
     const map = L.map('map').setView([0, 0], 6); // tạm thời đặt giữa
 

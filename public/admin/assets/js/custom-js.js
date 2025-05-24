@@ -136,9 +136,10 @@ $(document).ready(function () {
                     // Điền dữ liệu vào các field
                     $("input[name='name']").val(tour.title);
                     $("input[name='destination']").val(tour.destination);
-                    $("input[name='weather_destination']").val(
-                        tour.weather_destination
+                    $("input[name='weatherDestination']").val(
+                        tour.weatherDestination
                     );
+                    $("input[name='timeTour']").val(tour.timeTour);
                     $("select[name='domain']").val(tour.domain); // Giá trị select
                     $("input[name='number']").val(tour.quantity);
                     $("input[name='price_adult']").val(tour.priceAdult);
@@ -173,6 +174,7 @@ $(document).ready(function () {
             },
             error: function (xhr, textStatus, errorThrown) {
                 toastr.error("Có lỗi xảy ra. Vui lòng thử lại sau.");
+                console.log("AJAX error:", xhr.responseText); // Thêm dòng này để xem lỗi chi tiết
             },
         });
     });
@@ -281,9 +283,10 @@ $(document).ready(function () {
                         tourId: tourIdSendingImage,
                         name: $("input[name='name']").val(),
                         destination: $("input[name='destination']").val(),
-                        weather_destination: $(
-                            "input[name='weather_destination']"
+                        weatherDestination: $(
+                            "input[name='weatherDestination']"
                         ).val(),
+                        timeTour: $("input[name='timeTour']").val(),
                         domain: $("#domain").val(),
                         number: $("input[name='number']").val(),
                         price_adult: $("input[name='price_adult']").val(),

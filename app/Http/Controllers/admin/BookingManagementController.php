@@ -7,6 +7,7 @@ use App\Models\admin\BookingModel;
 use Barryvdh\DomPDF\Facade\Pdf as PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use PhpParser\Node\Expr\List_;
 
 class BookingManagementController extends Controller
 {
@@ -22,8 +23,8 @@ class BookingManagementController extends Controller
         $title = 'Quản lý đặt Tour';
 
         $list_booking = $this->booking->getBooking();
-        $list_booking = $this->updateHideBooking($list_booking);
 
+        $list_booking = $this->autoFinishBookings($list_booking);
         // dd($list_booking);
 
         return view('admin.booking', compact('title', 'list_booking'));
@@ -41,7 +42,7 @@ class BookingManagementController extends Controller
 
         if ($result) {
             $list_booking = $this->booking->getBooking();
-            $list_booking = $this->updateHideBooking($list_booking);
+            $list_booking = $this->autoFinishBookings($list_booking);
             return response()->json([
                 'success' => true,
                 'message' => 'Cập nhật trạng thái thành công.',
@@ -102,32 +103,6 @@ class BookingManagementController extends Controller
 
     }
 
-    public function finishBooking(Request $request)
-    {
-        $bookingId = $request->bookingId;
-
-        $dataConfirm = [
-            'bookingStatus' => 'f'
-        ];
-
-        $result = $this->booking->updateBooking($bookingId, $dataConfirm);
-
-        if ($result) {
-            $list_booking = $this->booking->getBooking();
-            $list_booking = $this->updateHideBooking($list_booking);
-            return response()->json([
-                'success' => true,
-                'message' => 'Cập nhật trạng thái thành công.',
-                'data' => view('admin.partials.list-booking', compact('list_booking'))->render()
-            ]);
-        } else {
-            return response()->json([
-                'success' => false,
-                'message' => 'Cập nhật thất bại.'
-            ], 500);
-        }
-    }
-
     public function receiviedMoney(Request $request){
         $bookingId = $request->bookingId;
 
@@ -151,24 +126,22 @@ class BookingManagementController extends Controller
         }
     }
 
-    private function updateHideBooking($list_booking)
-    {
-        // Lấy ngày hiện tại
-        $currentDate = date('Y-m-d');
+    public function autoFinishBookings()
+{
+    $currentDate = date('Y-m-d');
+    $list_booking = $this->booking->getBooking();
 
-        foreach ($list_booking as $booking) {
-            // So sánh endDate của booking với ngày hiện tại
-            if ($booking->endDate < $currentDate) {
-                $hide = '';
-            } else {
-                $hide = 'hide';
-            }
-
-            // Gán giá trị $hide vào mỗi booking
-            $booking->hide = $hide;
+    foreach ($list_booking as $booking) {
+        // Nếu bookingStatus là 'y' và đã hết hạn thì cập nhật thành 'f'
+        if ($booking->bookingStatus === 'y' && $booking->end_date < $currentDate) {
+            $this->booking->updateBooking($booking->bookingId, ['bookingStatus' => 'f']);
+            $booking->bookingStatus = 'f'; // cập nhật luôn trong object để hiển thị đúng
         }
-
-        return $list_booking;
+        // Gán thuộc tính hide để dùng cho view nếu cần
+        $booking->hide = ($booking->endDate < $currentDate) ? '' : 'hide';
     }
+
+    return $list_booking;
+}
 
 }

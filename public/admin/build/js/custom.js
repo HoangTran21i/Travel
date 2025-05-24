@@ -2317,6 +2317,8 @@ function init_SmartWizard() {
             var formData = {
                 name: $("input[name='name']").val(),
                 destination: $("input[name='destination']").val(),
+                weatherDestination: $("input[name='weatherDestination']").val(),
+                timeTour: $("input[name='timeTour']").val(),
                 domain: $("#domain").val(),
                 number: $("input[name='number']").val(),
                 price_adult: $("input[name='price_adult']").val(),

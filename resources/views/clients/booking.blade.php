@@ -106,7 +106,7 @@
                 <div>
                     <p>Mã tour : {{ $tour->tourId }}</p>
                     <input type="hidden" name="tourId" id="tourId" value="{{ $tour->tourId }}">
-                    <input type="hidden" id="tourTime" value="{{ $tour->time }}">
+                    <input type="hidden" id="tourTime" value="{{ $tour->timeTour }}">
                     <h5 class="widget-title">{{ $tour->title }}</h5>
                     <p>Ngày khởi hành:</p>
                     <input type="date" id="startdate" name="startdate"
